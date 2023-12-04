@@ -1,5 +1,6 @@
 package com.crudpractice.crud.entity;
 
+import com.crudpractice.crud.dto.CommentRequestDto;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -15,7 +16,14 @@ public class Comment {
     @GeneratedValue
     private Long commentId;
     @Column
+    private Long postId;
+    @Column
     private String author;
     @Column
-    private String content;
+    private String commentContent;
+
+    public Comment(CommentRequestDto commentRequestDto) {
+        this.author=commentRequestDto.getAuthor();
+        this.commentContent=commentRequestDto.getCommentContent();
+    }
 }

@@ -20,18 +20,18 @@ public class Post {
     @Column
     private String author;
     @Column
-    private String content;
+    private String postContent;
 
     public Post(PostRequestDto requestDto) {
         this.author = requestDto.getAuthor();
-        this.content = requestDto.getPostContent();
+        this.postContent = requestDto.getPostContent();
         this.title = requestDto.getTitle();
     }
 
     public void update(PostRequestDto requestDto) {
         this.author = requestDto.getAuthor();
         this.title = requestDto.getTitle();
-        this.content = requestDto.getPostContent();
+        this.postContent = requestDto.getPostContent();
 
     }
 }
